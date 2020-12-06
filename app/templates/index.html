@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content%}
+        <h1>Let's play Janken!</h1>
+        <h2>Add 'add_players' to the end of this URL to add your names.</h2>
+
+
+        <h1>Let's play Janken!</h1>
+        <h2>Add your names below.</h2>
+
+        <form action ="/add-players" method="post">
+            <label for="name">Name 1</form>
+            <input type="text" name='name1' id="name1">    
+            <!-- <label for="name">Name 2</form>
+            <input type="text" name=name2 id="name2">  -->
+            <input type ="submit" value ="Add Players">
+        </form>
+
+
+        {% for player in players %}
+        <div>
+            <p>
+                {{ player.name }}: <b>{{ player.choice }}</b>
+
+            </p>
+        </div>
+        {% endfor %}
+
+
+
+{% endblock %}
