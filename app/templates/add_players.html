@@ -5,12 +5,22 @@
         <h2>Add your names below.</h2>
 
         <form action ="/add-players" method="post">
-            <label for="First Player Name">Name 1</form>
+            <label for="name1">Name 1</form>
             <input type="text" name='name1' id="name1">    
-            <label for="Second Player Name">Name 2</form>
-            <input type="text" name=name2 id="name2"> 
+            <label for="name2">Name 2</form>
+            <input type="text" name='name2' id="name2">   
             <input type ="submit" value ="Add Players">
         </form>
+
+
+        {% for player in players %}
+        <div>
+            <p>
+                {{ player.name }}
+
+            </p>
+        </div>
+        {% endfor %}
 
 
 {% endblock %} -->
